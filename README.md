@@ -1,2 +1,2 @@
-# Sparkles
+# Sparkles 💥✨
 The Sparkles programming language
