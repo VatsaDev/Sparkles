@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sparkles💥✨</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="lang.js" defer></script>
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Fira+Code:wght@300&family=Raleway:wght@300&display=swap");
+
+      * {
+        font-family: "Raleway", sans-serif;
+      }
+
+      textarea {
+        font-family: "Fira Code", monospace;
+        padding: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <header class="m-4">
+      <div style="display: flex; justify-content: center">
+        <h1 class="text-4xl mt-2">Sparkles&nbsp;</h1>
+        <img
+          src="assets/bang.png"
+          alt="bang"
+          width="40px"
+          height="40px"
+          style="margin-top: 10px"
+        />
+        <img
+          src="assets/sparkles.png"
+          alt="bang"
+          width="40px"
+          height="40px"
+          style="margin-top: 10px"
+        />
+      </div>
+    </header>
+    <main class="grid grid-cols-2 gap-4 h-[36rem]">
+      <div>
+        <h2 class="text-2xl p-2"><u>Sparkles Code</u></h2>
+        <textarea
+          id="sparkText"
+          class="w-full h-5/6 bg-slate-800 text-white p-2"
+          style="font-family: 'Fira Code', monospace;"
+          onkeyup="update()"
+        ></textarea>
+      </div>
+      <div>
+        <h2 class="text-2xl p-2"><u>Javascript Code</u></h2>
+        <div
+          id="jsText"
+          class="w-full h-5/6 bg-slate-800 text-white p-2"
+          style="font-family: 'Fira Code', monospace;"
+        ></div>
+      </div>
+    </main>
+  </body>
+</html>
