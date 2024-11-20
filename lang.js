@@ -1,7 +1,7 @@
 function lexer(code) {
-  // lexes code into parts
+  // Lexes code into parts
   const codeParts = [];
-  const regex = /"(.*?)"/g; // quote split regex /"(.*?)"|(\r\n|\n|\r)/g
+  const regex = /"(.*?)"/g; // Regex to split quoted parts
 
   const tokens = code.split(regex);
 
@@ -13,7 +13,7 @@ function lexer(code) {
 }
 
 function parse(input) {
-  text = input;
+  let text = input; // Use let to avoid accidental global variable
   text = text.replace("new", "let");
   text = text.replace("is", "=");
   text = text.replace("say", "console.log");
@@ -36,33 +36,30 @@ function out(arr) {
 }
 
 function convert(input) {
-  ```
-  Uses the lexer function and the out function to convert lexed sparkles code 
-
-  Input and Output type is text
-  ```
+  // Uses the lexer function and the out function to convert lexed sparkles code
+  // Input and Output type is text
   const codeLex = lexer(input);
   const code = out(codeLex);
   return code;
 }
 
 function update() {
-  code = "`" + document.getElementById("sparkText").value + "`";
+  const code = "`" + document.getElementById("sparkText").value + "`";
   console.log(code);
   const lines = code.split("\n");
   document.getElementById("jsText").innerHTML = "";
-  num = 0;
+  let num = 0;
   lines.forEach((line) => {
-    jsCode = convert(line);
+    const jsCode = convert(line); // Call the corrected convert function
     console.log(jsCode);
-    if (num == 0) {
+    if (num === 0) {
       document.getElementById("jsText").innerHTML += jsCode.substring(0, jsCode.length - 1);
-    } else if(num !=0) {
-        document.getElementById("jsText").innerHTML +=
+    } else {
+      document.getElementById("jsText").innerHTML +=
         "<br>" + jsCode.substring(0, jsCode.length - 1);
     }
-    num++
+    num++;
   });
-  let final = document.getElementById("jsText").innerHTML.toString()
+  const final = document.getElementById("jsText").innerHTML.toString();
   document.getElementById("jsText").innerHTML = final.substring(1, final.length - 1);
 }
